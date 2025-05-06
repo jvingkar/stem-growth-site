@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Step 2: Foundational Science - Science Studio">
+    <title>Step 2: Foundational Science - Science Studio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="progress-bar"></div>
+    
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Science Studio</div>
+                <button class="mobile-menu-btn">☰</button>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="step1.html">Step 1: Intro to STEM</a>
+                    <a href="step2.html">Step 2: Foundational Science</a>
+                    <a href="step3.html">Step 3: Foundational Coding</a>
+                    <a href="step4.html">Step 4: Science Based Coding</a>
+                    <a href="step5.html">Step 5: Introductory Project</a>
+                    <a href="step6.html">Step 6: Comprehensive Project</a>
+                    <a href="step7.html">Step 7: College & Career</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="mobile-menu">
+        <button class="close-btn">×</button>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="step1.html">Step 1: Intro to STEM</a>
+            <a href="step2.html">Step 2: Foundational Science</a>
+            <a href="step3.html">Step 3: Foundational Coding</a>
+            <a href="step4.html">Step 4: Science Based Coding</a>
+            <a href="step5.html">Step 5: Introductory Project</a>
+            <a href="step6.html">Step 6: Comprehensive Project</a>
+            <a href="step7.html">Step 7: College & Career</a>
+        </div>
+    </div>
+
+    <main>
+        <div class="container">
+            <section class="hero">
+                <h1>Step 2: Foundational Science</h1>
+                <p class="subtitle">Building Core Scientific Knowledge</p>
+            </section>
+
+            <section class="content">
+                <div class="section">
+                    <h2>Age Range</h2>
+                    <p>Designed for students in Grades 2-5, this program builds upon the curiosity sparked in Step 1 and develops a strong foundation in scientific concepts.</p>
+                </div>
+
+                <div class="section">
+                    <h2>Program Overview</h2>
+                    <p>Our Foundational Science program focuses on developing core scientific knowledge through:</p>
+                    <ul>
+                        <li>Structured scientific concepts</li>
+                        <li>Interactive experiments</li>
+                        <li>Problem-solving activities</li>
+                        <li>Real-world applications</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2>Learning Approach</h2>
+                    <p>We emphasize hands-on learning and critical thinking through:</p>
+                    <ul>
+                        <li>Guided scientific experiments</li>
+                        <li>Interactive demonstrations</li>
+                        <li>Group problem-solving</li>
+                        <li>Scientific method practice</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2>Key Benefits</h2>
+                    <ul>
+                        <li>Develops strong scientific thinking</li>
+                        <li>Builds analytical skills</li>
+                        <li>Encourages systematic problem-solving</li>
+                        <li>Prepares for advanced science concepts</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2>Next Steps</h2>
+                    <p>After mastering foundational science concepts, students will be ready to begin their coding journey in Step 3: Foundational Coding.</p>
+                    <a href="step3.html" class="btn">Learn About Step 3</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Science Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const closeBtn = document.querySelector('.close-btn');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+        });
+
+        closeBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+        });
+
+        // Progress Bar
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.querySelector('.progress-bar').style.setProperty('--progress', `${scrolled}%`);
+        });
+
+        // Content Animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.content section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Step 4: Science Based Coding - Science Studio">
+    <title>Step 4: Science Based Coding - Science Studio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="progress-bar"></div>
+    
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Science Studio</div>
+                <button class="mobile-menu-btn">☰</button>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="step1.html">Step 1: Intro to STEM</a>
+                    <a href="step2.html">Step 2: Foundational Science</a>
+                    <a href="step3.html">Step 3: Foundational Coding</a>
+                    <a href="step4.html">Step 4: Science Based Coding</a>
+                    <a href="step5.html">Step 5: Introductory Project</a>
+                    <a href="step6.html">Step 6: Comprehensive Project</a>
+                    <a href="step7.html">Step 7: College & Career</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="mobile-menu">
+        <button class="close-btn">×</button>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="step1.html">Step 1: Intro to STEM</a>
+            <a href="step2.html">Step 2: Foundational Science</a>
+            <a href="step3.html">Step 3: Foundational Coding</a>
+            <a href="step4.html">Step 4: Science Based Coding</a>
+            <a href="step5.html">Step 5: Introductory Project</a>
+            <a href="step6.html">Step 6: Comprehensive Project</a>
+            <a href="step7.html">Step 7: College & Career</a>
+        </div>
+    </div>
+
+    <main>
+        <div class="container">
+            <section class="hero">
+                <h1>Step 4: Science Based Coding</h1>
+                <p class="subtitle">Combining Science and Programming</p>
+            </section>
+
+            <section class="content">
+                <div class="section">
+                    <h2>Age Range</h2>
+                    <p>This program is designed for students who have completed our foundational programs and are ready to combine their scientific knowledge with programming skills.</p>
+                </div>
+
+                <div class="section">
+                    <h2>Program Overview</h2>
+                    <p>Our Science Based Coding program focuses on integrating scientific concepts with programming through:</p>
+                    <ul>
+                        <li>Scientific data analysis</li>
+                        <li>Simulation development</li>
+                        <li>Research tools creation</li>
+                        <li>Scientific visualization</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2>Learning Approach</h2>
+                    <p>We emphasize practical application through:</p>
+                    <ul>
+                        <li>Project-based learning</li>
+                        <li>Scientific methodology</li>
+                        <li>Data analysis techniques</li>
+                        <li>Research tool development</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2>Key Benefits</h2>
+                    <ul>
+                        <li>Develops scientific programming skills</li>
+                        <li>Builds research capabilities</li>
+                        <li>Encourages innovation</li>
+                        <li>Prepares for advanced projects</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2>Next Steps</h2>
+                    <p>After mastering science-based coding, students will be ready to undertake their first major project in Step 5: Introductory Science Based Coding Project.</p>
+                    <a href="step5.html" class="btn">Learn About Step 5</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Science Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const closeBtn = document.querySelector('.close-btn');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+        });
+
+        closeBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+        });
+
+        // Progress Bar
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.querySelector('.progress-bar').style.setProperty('--progress', `${scrolled}%`);
+        });
+
+        // Content Animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.content section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html> 
